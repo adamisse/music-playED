@@ -7,10 +7,10 @@
 
 typedef struct ListaUsu tListaUsu;
 
-tListaUsu *iniciaSentinela();
+tListaUsu *iniciaSentinelaUsuario();
 
 void insereUsuario(tListaUsu *sent,tUsuario *usuario);
 
-void liberaListaUsuario(tListaUsu *set);
+void liberaListaUsuario(tListaUsu *sent);
 
 #endif

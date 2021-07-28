@@ -1,30 +1,30 @@
-#include "../include/tListaUsuario.h"
+#include "../include/tListaPlayList.h"
 
 typedef struct celula Celula;
 
-struct ListaUsu{
+struct ListaPlaylist{
     Celula *pri;
     Celula *ult;
 };
 
 struct celula{
-    tUsuario *usuario;
+    tPlaylist *playList;
     Celula *prox;
 };
 
-tListaUsu *iniciaSentinelaUsuario(){
-    tListaUsu *set = (tListaUsu *) malloc(sizeof(tListaUsu));
+tListaPlaylist *iniciaSentinelaPlaylist(){
+    tListaPlaylist *set = (tListaPlaylist *) malloc(sizeof(tListaPlaylist));
     set->pri = NULL;
     set->ult = NULL;
 
     return set;
 }
 
-void insereUsuario(tListaUsu *sent,tUsuario *usuario){
+void inserePlaylist(tListaPlaylist *sent, tPlaylist *playlist){
     Celula *novaCel = (Celula *) malloc(sizeof(Celula));
-    novaCel->usuario = usuario;
     novaCel->prox = NULL;
-    
+    novaCel->playList = playlist;
+
     if(sent->pri == NULL){
         sent->pri = novaCel;
         sent->ult = novaCel;
@@ -34,7 +34,7 @@ void insereUsuario(tListaUsu *sent,tUsuario *usuario){
     }
 }
 
-void liberaListaUsuario(tListaUsu *sent){
+void liberaListaPlaylist(tListaPlaylist *sent){ 
     Celula *p = sent->pri;
     Celula *t;
 
@@ -42,7 +42,7 @@ void liberaListaUsuario(tListaUsu *sent){
         t = p->prox;
         //liberar oq estiver dentro da celula de usuario
         //provavelmente chamar aqui uma funcao assim:
-        //liberaUsuario(p->usuario)
+        //liberaPlaylist(p->playList)
         free(p);
         p = t;
     }

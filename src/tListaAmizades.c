@@ -1,30 +1,30 @@
-#include "../include/tListaUsuario.h"
+#include "../include/tListaAmizade.h"
 
 typedef struct celula Celula;
 
-struct ListaUsu{
+struct ListaAmigos{
     Celula *pri;
     Celula *ult;
 };
 
 struct celula{
-    tUsuario *usuario;
     Celula *prox;
+    tUsuario *usu;
 };
 
-tListaUsu *iniciaSentinelaUsuario(){
-    tListaUsu *set = (tListaUsu *) malloc(sizeof(tListaUsu));
+tListaAmigos *iniciaSentinelaAmigos(){
+    tListaAmigos *set = (tListaAmigos *) malloc(sizeof(tListaAmigos));
     set->pri = NULL;
     set->ult = NULL;
 
     return set;
 }
 
-void insereUsuario(tListaUsu *sent,tUsuario *usuario){
+void insereAmigo(tListaAmigos *sent,tUsuario *usuario){
     Celula *novaCel = (Celula *) malloc(sizeof(Celula));
-    novaCel->usuario = usuario;
     novaCel->prox = NULL;
-    
+    novaCel->usu = usuario;
+
     if(sent->pri == NULL){
         sent->pri = novaCel;
         sent->ult = novaCel;
@@ -34,15 +34,12 @@ void insereUsuario(tListaUsu *sent,tUsuario *usuario){
     }
 }
 
-void liberaListaUsuario(tListaUsu *sent){
+void liberaListaAmigos(tListaAmigos *sent){
     Celula *p = sent->pri;
     Celula *t;
 
     while(p != NULL){
         t = p->prox;
-        //liberar oq estiver dentro da celula de usuario
-        //provavelmente chamar aqui uma funcao assim:
-        //liberaUsuario(p->usuario)
         free(p);
         p = t;
     }
