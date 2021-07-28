@@ -7,11 +7,14 @@
 
 typedef struct Usuario tUsuario;
 
-tUsuario *iniciaUsuario();
+tUsuario *inicializaUsuario();
 
-void preencheUsuario(tUsuario *usuario);
+void preencheNomeUsuario(tUsuario *usuario, char *nome);
 
-void insereNome(tUsuario *usuario, char *nome);
+void liberaUsuario(tUsuario *usuario);
 
+
+//so testando
+void printaNome(tUsuario *usuario);
 
 #endif

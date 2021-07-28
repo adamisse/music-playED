@@ -9,6 +9,8 @@ typedef struct ListaUsu tListaUsu;
 
 tListaUsu *iniciaSentinelaUsuario();
 
+void criaFilaUsuarios(tListaUsu *sent);
+
 void insereUsuario(tListaUsu *sent,tUsuario *usuario);
 
 void liberaListaUsuario(tListaUsu *sent);

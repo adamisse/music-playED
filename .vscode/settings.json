@@ -2,7 +2,9 @@
     "files.associations": {
         "tusuario.h": "c",
         "tlistaamizade.h": "c",
-        "tplaylist.h": "c"
+        "tplaylist.h": "c",
+        "tlistaplaylist.h": "c",
+        "tlistausuario.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false
 }
