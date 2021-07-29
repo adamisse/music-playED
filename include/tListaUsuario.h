@@ -15,4 +15,10 @@ void insereUsuario(tListaUsu *sent,tUsuario *usuario);
 
 void liberaListaUsuario(tListaUsu *sent);
 
+tUsuario *procuraUsuario(tListaUsu *sent, char *nome);
+
+
+//so de teste
+void printaFilaUsuarios(tListaUsu *sent);
+
 #endif

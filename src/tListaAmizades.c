@@ -46,3 +46,13 @@ void liberaListaAmigos(tListaAmigos *sent){
 
     free(sent);
 }
+
+
+void printaListaAmigos(tListaAmigos *sent){
+    Celula *p;
+    char *nome;
+    for(p=sent->pri; p!=NULL ; p = p->prox){
+        nome = retornaNomeUsu(p->usu);
+        printf("%s ",nome);
+    }
+}

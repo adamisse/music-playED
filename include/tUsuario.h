@@ -13,8 +13,11 @@ void preencheNomeUsuario(tUsuario *usuario, char *nome);
 
 void liberaUsuario(tUsuario *usuario);
 
+char *retornaNomeUsu(tUsuario *usuario);
+
+void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2);
 
 //so testando
-void printaNome(tUsuario *usuario);
+void printaUsuario(tUsuario *usuario);
 
 #endif

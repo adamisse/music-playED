@@ -13,4 +13,9 @@ void insereAmigo(tListaAmigos *sent,tUsuario *usuario);
 
 void liberaListaAmigos(tListaAmigos *sent);
 
+
+//so de teste
+void printaListaAmigos(tListaAmigos *sent);
+
+
 #endif
