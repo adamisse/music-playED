@@ -48,6 +48,7 @@ void liberaListaAmigos(tListaAmigos *sent){
 }
 
 
+//so de teste aqui
 void printaListaAmigos(tListaAmigos *sent){
     Celula *p;
     char *nome;

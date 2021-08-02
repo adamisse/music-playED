@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "tPlaylist.h"
 
 typedef struct Usuario tUsuario;
 
@@ -16,6 +17,8 @@ void liberaUsuario(tUsuario *usuario);
 char *retornaNomeUsu(tUsuario *usuario);
 
 void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2);
+
+void preenchePlayList(tUsuario *usuario,tPlaylist *playList);
 
 //so testando
 void printaUsuario(tUsuario *usuario);

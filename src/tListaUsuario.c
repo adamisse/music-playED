@@ -52,9 +52,6 @@ void criaFilaUsuarios(tListaUsu *sent){
         preencheListaAmigos(amigo1,amigo2);
     }
     fclose(arq);
-
-    //apenas testando aqui
-    printaFilaUsuarios(sent);
 }
 
 void insereUsuario(tListaUsu *sent,tUsuario *usuario){
@@ -102,5 +99,6 @@ void printaFilaUsuarios(tListaUsu *sent){
     Celula *p;
     for(p=sent->pri; p!=NULL ; p = p->prox){
         printaUsuario(p->usuario);
+        printf("\n");
     }
 }

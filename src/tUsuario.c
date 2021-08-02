@@ -26,11 +26,16 @@ void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2){
     insereAmigo(usuario2->sentAmg,usuario1);
 }
 
+void preenchePlayList(tUsuario *usuario,tPlaylist *playList){
+    inserePlaylist(usuario->sentPla,playList);
+}
+
 void liberaUsuario(tUsuario *usuario){
     free(usuario->nome);
     //chamar 2 funções de free aqui para liberar o usuario por completo;
+    //essa aqui ja ta funcionando
     liberaListaAmigos(usuario->sentAmg);
-    //liberaListaPlaylist(usuario->sentPla);
+    liberaListaPlaylist(usuario->sentPla);
 
     free(usuario);
 }
@@ -39,9 +44,13 @@ char *retornaNomeUsu(tUsuario *usuario){
     return usuario->nome;
 }
 
+//so de teste isso daqui
 void printaUsuario(tUsuario *usuario){
     printf("%s\n",usuario->nome);
     printf("Amigos:");
     printaListaAmigos(usuario->sentAmg);
+    printf("\n");
+    printf("PlayList's:");
+    printaListaplayList(usuario->sentPla);
     printf("\n");
 }
