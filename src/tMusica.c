@@ -5,10 +5,20 @@ struct Musica{
     char *nomeBand;
 };
 
-char *retornaNomeMusica(tMusica *musica){
-    return musica->nomeMus;
+tMusica *inicializaMusica(char *banda,char *musica){
+    tMusica *mus = (tMusica *) malloc(sizeof(tMusica));
+    mus->nomeBand = strdup(banda);
+    mus->nomeMus = strdup(musica);
+
+    return mus;
 }
 
-char *retornaNomeBanda(tMusica *musica){
-    return musica->nomeBand;
+void liberaMusica(tMusica *musica){
+    free(musica->nomeMus);
+    free(musica->nomeBand);
+    free(musica);
+}
+
+void printaMusica(tMusica *musica){
+    printf("%s - %s",musica->nomeBand,musica->nomeMus);
 }

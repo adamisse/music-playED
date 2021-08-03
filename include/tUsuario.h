@@ -18,7 +18,7 @@ char *retornaNomeUsu(tUsuario *usuario);
 
 void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2);
 
-void preenchePlayList(tUsuario *usuario,tPlaylist *playList);
+void preencheListaPlayList(tUsuario *usuario,tPlaylist *playList);
 
 //so testando
 void printaUsuario(tUsuario *usuario);

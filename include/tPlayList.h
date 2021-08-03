@@ -9,10 +9,9 @@ typedef struct Playlist tPlaylist;
 
 tPlaylist *inicializaPlayList();
 
-void preencheNomePlayList(tPlaylist *playList,char *nome);
+void preenchePlayList(tPlaylist *playList,char *nome);
 
 void liberaPlayList(tPlaylist *playList);
-
 
 //test
 void printaPlayList(tPlaylist *playList);

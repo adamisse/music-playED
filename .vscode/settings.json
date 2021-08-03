@@ -4,7 +4,8 @@
         "tlistaamizade.h": "c",
         "tplaylist.h": "c",
         "tlistaplaylist.h": "c",
-        "tlistausuario.h": "c"
+        "tlistausuario.h": "c",
+        "tmusica.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false
 }

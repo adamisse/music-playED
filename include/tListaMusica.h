@@ -8,5 +8,14 @@
 
 typedef struct ListaMusica tListaMusica;
 
+tListaMusica *iniciaSentinelaMusica();
+
+//void criaFilaMusica(tListaMusica *sent);
+
+void insereMusica(tListaMusica *sent,tMusica *musica);
+
+void liberaListaMusica(tListaMusica *sent);
+
+void printaListaMusica(tListaMusica *sent);
 
 #endif

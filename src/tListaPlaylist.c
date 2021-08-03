@@ -37,8 +37,10 @@ void criaFilaPlayList(tListaUsu *sent){
             fscanf(arq,";%[^;^\n] ",nomePlay);
             
             tPlaylist *playList = inicializaPlayList();
-            preencheNomePlayList(playList,nomePlay);
-            preenchePlayList(usuario,playList);
+            preenchePlayList(playList,nomePlay);
+            //chamar função para preencher lista de musica da play list
+            //essa função vai passar a playList
+            preencheListaPlayList(usuario,playList);
         }
     }
 

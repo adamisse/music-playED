@@ -26,7 +26,7 @@ void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2){
     insereAmigo(usuario2->sentAmg,usuario1);
 }
 
-void preenchePlayList(tUsuario *usuario,tPlaylist *playList){
+void preencheListaPlayList(tUsuario *usuario,tPlaylist *playList){
     inserePlaylist(usuario->sentPla,playList);
 }
 
@@ -50,7 +50,6 @@ void printaUsuario(tUsuario *usuario){
     printf("Amigos:");
     printaListaAmigos(usuario->sentAmg);
     printf("\n");
-    printf("PlayList's:");
+    printf("PlayList's:\n");
     printaListaplayList(usuario->sentPla);
-    printf("\n");
 }

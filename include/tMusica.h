@@ -7,9 +7,11 @@
 
 typedef struct Musica tMusica;
 
-char *retornaNomeMusica(tMusica *musica);
+tMusica *inicializaMusica(char *banda,char *musica);
 
-char *retornaNomeBanda(tMusica *musica);
+void liberaMusica(tMusica *musica);
+
+void printaMusica(tMusica *musica);
 
 
 #endif
