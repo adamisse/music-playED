@@ -20,8 +20,6 @@ tListaMusica *iniciaSentinelaMusica(){
     return sent;
 }
 
-//void criaFilaMusica(tListaMusica *sent);
-
 void insereMusica(tListaMusica *sent,tMusica *musica){
     Celula *novaCel = (Celula *) malloc(sizeof(Celula));
     novaCel->mus = musica;

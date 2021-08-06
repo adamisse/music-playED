@@ -14,6 +14,8 @@ void criaFilaPlayList(tListaUsu *sent);
 
 void inserePlaylist(tListaPlaylist *sent, tPlaylist *scan);
 
+tPlaylist *procuraPlaylist(tListaPlaylist *sent, char *nome);
+
 void liberaListaPlaylist(tListaPlaylist *sent);
 
 

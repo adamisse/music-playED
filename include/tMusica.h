@@ -13,5 +13,9 @@ void liberaMusica(tMusica *musica);
 
 void printaMusica(tMusica *musica);
 
+char *retornaNomeMus(tMusica *musica);
+
+char *retornaNomeBan(tMusica *musica);
+
 
 #endif

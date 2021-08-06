@@ -19,6 +19,14 @@ void liberaMusica(tMusica *musica){
     free(musica);
 }
 
+char *retornaNomeMus(tMusica *musica){
+    return musica->nomeBand;
+}
+
+char *retornaNomeBan(tMusica *musica){
+    return musica->nomeBand;
+}
+
 void printaMusica(tMusica *musica){
-    printf("%s - %s",musica->nomeBand,musica->nomeMus);
+    printf("%s- %s",musica->nomeBand,musica->nomeMus);
 }

@@ -5,6 +5,7 @@
 
 struct Usuario{
     char *nome;
+    int qtdPlayList;
     tListaAmigos *sentAmg;
     tListaPlaylist *sentPla;
 };
@@ -19,6 +20,10 @@ tUsuario *inicializaUsuario(){
 
 void preencheNomeUsuario(tUsuario *usuario, char *nome){
     usuario->nome = strdup(nome);
+}
+
+void preencheQtdPlayList(tUsuario *usuario, int qtdPlayList){
+    usuario->qtdPlayList = qtdPlayList;
 }
 
 void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2){
@@ -47,7 +52,7 @@ char *retornaNomeUsu(tUsuario *usuario){
 //so de teste isso daqui
 void printaUsuario(tUsuario *usuario){
     printf("%s\n",usuario->nome);
-    printf("Amigos:");
+    printf("Amigos: ");
     printaListaAmigos(usuario->sentAmg);
     printf("\n");
     printf("PlayList's:\n");

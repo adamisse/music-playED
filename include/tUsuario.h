@@ -12,6 +12,8 @@ tUsuario *inicializaUsuario();
 
 void preencheNomeUsuario(tUsuario *usuario, char *nome);
 
+void preencheQtdPlayList(tUsuario *usuario, int qtdPlayList);
+
 void liberaUsuario(tUsuario *usuario);
 
 char *retornaNomeUsu(tUsuario *usuario);

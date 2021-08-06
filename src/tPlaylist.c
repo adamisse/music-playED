@@ -1,5 +1,4 @@
 #include "../include/tPlaylist.h"
-#include "../include/tListaMusica.h"
 
 struct Playlist{
     char *nome;
@@ -39,6 +38,14 @@ void liberaPlayList(tPlaylist *playList){
     liberaListaMusica(playList->sentMus);
 
     free(playList);
+}
+
+char *retornaNomePlay(tPlaylist *Playlist){
+    return Playlist->nome;
+}
+
+tListaMusica *retornaListaMusica(tPlaylist *playList){
+    return playList->sentMus;
 }
 
 //test

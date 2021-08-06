@@ -6,8 +6,6 @@ int main(){
     criaFilaUsuarios(sentUsu);
     criaFilaPlayList(sentUsu);
 
-
-
     //apenas testando aqui
     printaFilaUsuarios(sentUsu);
     liberaListaUsuario(sentUsu);
