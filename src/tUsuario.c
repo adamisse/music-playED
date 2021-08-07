@@ -5,7 +5,6 @@
 
 struct Usuario{
     char *nome;
-    int qtdPlayList;
     tListaAmigos *sentAmg;
     tListaPlaylist *sentPla;
 };
@@ -22,10 +21,6 @@ void preencheNomeUsuario(tUsuario *usuario, char *nome){
     usuario->nome = strdup(nome);
 }
 
-void preencheQtdPlayList(tUsuario *usuario, int qtdPlayList){
-    usuario->qtdPlayList = qtdPlayList;
-}
-
 void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2){
     insereAmigo(usuario1->sentAmg,usuario2);
     insereAmigo(usuario2->sentAmg,usuario1);
@@ -37,8 +32,6 @@ void preencheListaPlayList(tUsuario *usuario,tPlaylist *playList){
 
 void liberaUsuario(tUsuario *usuario){
     free(usuario->nome);
-    //chamar 2 funções de free aqui para liberar o usuario por completo;
-    //essa aqui ja ta funcionando
     liberaListaAmigos(usuario->sentAmg);
     liberaListaPlaylist(usuario->sentPla);
 
@@ -47,6 +40,13 @@ void liberaUsuario(tUsuario *usuario){
 
 char *retornaNomeUsu(tUsuario *usuario){
     return usuario->nome;
+}
+
+void refatorandoUsuario(tUsuario *usuario){
+    tListaPlaylist *novaSent = iniciaSentinelaPlaylist();
+    refatoraListaPlaylist(usuario->sentPla,novaSent);
+
+    usuario->sentPla = novaSent;
 }
 
 //so de teste isso daqui

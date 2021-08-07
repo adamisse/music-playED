@@ -8,6 +8,11 @@ int main(){
 
     //apenas testando aqui
     printaFilaUsuarios(sentUsu);
+
+    refatorandoListaUsuarios(sentUsu);
+    //testnado
+    printaFilaUsuarios(sentUsu);
+
     liberaListaUsuario(sentUsu);
     return 0;
 }

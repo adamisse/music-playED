@@ -1,11 +1,11 @@
 #ifndef T_LISTA_AMIZADE
 #define T_LISTA_AMIZADE
 
+typedef struct ListaAmigos tListaAmigos;
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tUsuario.h"
-
-typedef struct ListaAmigos tListaAmigos;
 
 tListaAmigos *iniciaSentinelaAmigos();
 

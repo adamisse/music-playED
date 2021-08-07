@@ -1,11 +1,11 @@
 #ifndef T_LISTA_USUARIO
 #define T_LISTA_USUARIO
 
+typedef struct ListaUsu tListaUsu;
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tUsuario.h"
-
-typedef struct ListaUsu tListaUsu;
 
 tListaUsu *iniciaSentinelaUsuario();
 
@@ -17,7 +17,7 @@ void liberaListaUsuario(tListaUsu *sent);
 
 tUsuario *procuraUsuario(tListaUsu *sent, char *nome);
 
-
+void refatorandoListaUsuarios(tListaUsu *sent);
 //so de teste
 void printaFilaUsuarios(tListaUsu *sent);
 

@@ -48,6 +48,26 @@ void liberaListaMusica(tListaMusica *sent){
     free(sent);
 }
 
+void refatorandoListaMusica(tListaMusica *sentMus, tListaPlaylist *sentPlay){
+    Celula *p;
+    for(p=sentMus->pri; p!=NULL ;p=p->prox){
+        char *nomeBand = retornaNomeBan(p->mus);
+        char *nomeMusi = retornaNomeMus(p->mus);
+        tMusica *musica = inicializaMusica(nomeBand,nomeMusi);
+
+        tPlaylist *playList = procuraPlaylist(sentPlay,nomeBand);
+        //criar a playList pq nao exite
+        if(playList == NULL){
+            tPlaylist *playList = inicializaPlayList();
+            preencheNovaPlayList(playList,musica,nomeBand);
+            inserePlaylist(sentPlay,playList);
+        }else{ // a playList ja existe, so basta adicionar a musica nela
+            tListaMusica *sentMus = retornaListaMusica(playList);
+            insereMusica(sentMus,musica);
+        }
+    }
+}
+
 void printaListaMusica(tListaMusica *sent){
     Celula *p;
     for(p=sent->pri; p!=NULL ; p = p->prox){

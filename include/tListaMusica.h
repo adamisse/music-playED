@@ -1,20 +1,21 @@
 #ifndef T_LISTA_MUSICA
 #define T_LISTA_MUSICA
 
+typedef struct ListaMusica tListaMusica;
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "tMusica.h"
-
-typedef struct ListaMusica tListaMusica;
+#include "tListaPlayList.h"
 
 tListaMusica *iniciaSentinelaMusica();
-
-//void criaFilaMusica(tListaMusica *sent);
 
 void insereMusica(tListaMusica *sent,tMusica *musica);
 
 void liberaListaMusica(tListaMusica *sent);
+
+void refatorandoListaMusica(tListaMusica *sentMus, tListaPlaylist *sentPlay);
 
 void printaListaMusica(tListaMusica *sent);
 

@@ -33,6 +33,11 @@ void preenchePlayList(tPlaylist *playList,char *nome){
     fclose(arq);
 }
 
+void preencheNovaPlayList(tPlaylist *playList, tMusica *musica, char *nome){
+    playList->nome = strdup(nome);
+    insereMusica(playList->sentMus,musica);
+}
+
 void liberaPlayList(tPlaylist *playList){
     free(playList->nome);
     liberaListaMusica(playList->sentMus);
@@ -54,3 +59,4 @@ void printaPlayList(tPlaylist *playList){
     printaListaMusica(playList->sentMus);
     printf("\n");
 }
+

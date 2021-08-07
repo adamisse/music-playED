@@ -54,12 +54,10 @@ void criaFilaUsuarios(tListaUsu *sent){
     fclose(arq);
 }
 
-void refatorando(tListaUsu *sent){
+void refatorandoListaUsuarios(tListaUsu *sent){
     Celula *p = sent->pri;
     while(p != NULL){
-        //criar funções para refatorar lista de playList
-        //acessaPlaylist(p->usuario);
-
+        refatorandoUsuario(p->usuario);
         p = p->prox;
     }
 }

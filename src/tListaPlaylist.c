@@ -32,7 +32,6 @@ void criaFilaPlayList(tListaUsu *sent){
 
     while(fscanf(arq,"%[^;];%d",nome,&qtdPlayL) == 2){
         tUsuario *usuario = procuraUsuario(sent,nome);
-        preencheQtdPlayList(usuario,qtdPlayL);
         for(int i=0; i<qtdPlayL ;i++){
             char nomePlay[50];
             fscanf(arq,";%[^;^\n] ",nomePlay);
@@ -48,19 +47,15 @@ void criaFilaPlayList(tListaUsu *sent){
     fclose(arq);
 }
 
-void refatoraListaPlaylist(tListaPlaylist *sent, int qtdPlay){
-    Celula *p = sent->pri;
-    for(int i=0; i<qtdPlay ;i++){
-        tListaMusica *sentMus = retornaListaMusica(p->playList);
-        //a ideia aqui eh criar uma serie de playLists com base nessa lista de musicas;
-        //colocar essas playLists novas na lista com a inserePlaylist();
-        //depois liberar essa playLista inicial contida na celula atual;
-
-        //como criar as playList com base na lista de musicas *???????????????????????????????????*
-        //ok isso daqui ta complicado msm
-
-        p = p->prox;
+void refatoraListaPlaylist(tListaPlaylist *sent, tListaPlaylist *novaSent){
+    Celula *p;
+    
+    for(p=sent->pri; p!=NULL ;p=p->prox){
+        tListaMusica *sentMusic = retornaListaMusica(p->playList);
+        refatorandoListaMusica(sentMusic,novaSent);
     }
+
+    liberaListaPlaylist(sent);
 }
 
 void inserePlaylist(tListaPlaylist *sent, tPlaylist *playlist){
