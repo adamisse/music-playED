@@ -129,8 +129,29 @@ void printaNomeListaPlay(tListaPlaylist *sent, FILE *arq, char *nomeUsu){
         }
         tListaMusica *sentMus = retornaListaMusica(p->playList);
         printaListaMusica2(sentMus,arqPlay);
+        fclose(arqPlay);
     }
     fprintf(arq,"\n");
+}
+
+int comparaListaPlay(tListaPlaylist *sent1,tListaPlaylist *sent2){
+    Celula *p, *t;
+    int similaridade = 0;
+
+    for(p=sent1->pri; p!=NULL ;p=p->prox){
+        char *nomePlay1 = retornaNomePlay(p->playList);
+        for(t=sent2->pri; t!=NULL ;t=t->prox){
+            char *nomePlay2 = retornaNomePlay(t->playList);
+            if(strcmp(nomePlay1,nomePlay2) == 0){
+                tListaMusica *sentMus1 = retornaListaMusica(p->playList);
+                tListaMusica *sentMus2 = retornaListaMusica(t->playList);
+
+                similaridade += similaridadeListaMusica(sentMus1,sentMus2);
+            }
+        }
+    }
+
+    return similaridade;
 }
 
 void printaListaplayList(tListaPlaylist *sent){

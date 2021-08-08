@@ -1,4 +1,5 @@
 #include "../include/tListaUsuario.h"
+#include "../include/tListaAmizade.h"
 #include "../include/tUsuario.h"
 
 typedef struct celula Celula;
@@ -79,12 +80,21 @@ void insereUsuario(tListaUsu *sent,tUsuario *usuario){
 void geraSaida(tListaUsu *sent){
    Celula *p;
    char adress[150];
+   //se o diretorio nao existir, criar ele aqui e ja era
+   
+   system("mkdir data/Saida");
+   
+
+   //O diretorio "Saida" ja existe ou nao *?????*
+   //considerando como ja existindo
    char adressAux[150] = "mkdir data/Saida/";
    FILE *arq = fopen("data/Saida/played-refatorada.txt","w");
-   if(arq == NULL){
-       printf("Erro na criação do arquivo played-refatorada.txt\n");
+   FILE *arqSimi = fopen("data/Saida/similaridades.txt","w");
+   if(arq == NULL || arqSimi == NULL){
+       printf("Erro na criação do arquivo played-refatorada.txt ou similaridades.txt\n");
        exit(1);
    }
+   fclose(arqSimi);
 
    for(p=sent->pri; p!=NULL ;p=p->prox){
        tListaPlaylist *sentPlay = retornaListaPlayList(p->usuario);
@@ -97,6 +107,9 @@ void geraSaida(tListaUsu *sent){
 
        fprintf(arq,"%s;%d",nomeUsu,qtdPlay);
        printaNomeListaPlay(sentPlay,arq,nomeUsu);
+
+       tListaAmigos *sentAmg = retornaListaAmigos(p->usuario);
+       comparaAmigos(p->usuario,sentAmg);
    } 
    fclose(arq);
 }

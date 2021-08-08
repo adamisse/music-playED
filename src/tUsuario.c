@@ -46,6 +46,10 @@ tListaPlaylist *retornaListaPlayList(tUsuario *usuario){
     return usuario->sentPla;
 }
 
+tListaAmigos *retornaListaAmigos(tUsuario *usuario){
+    return usuario->sentAmg;
+}
+
 void refatorandoUsuario(tUsuario *usuario){
     tListaPlaylist *novaSent = iniciaSentinelaPlaylist();
     refatoraListaPlaylist(usuario->sentPla,novaSent);

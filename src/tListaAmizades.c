@@ -47,6 +47,47 @@ void liberaListaAmigos(tListaAmigos *sent){
     free(sent);
 }
 
+void comparaAmigos(tUsuario *usuario, tListaAmigos *sentAmg){
+    Celula *p;
+    char *nomeUsu = retornaNomeUsu(usuario);
+    for(p=sentAmg->pri; p!=NULL ;p=p->prox){
+        char *nomeAmg = retornaNomeUsu(p->usu);
+        if(procuraNomes(nomeUsu,nomeAmg) == 0){
+            FILE *arq = fopen("data/Saida/similaridades.txt","a+");
+            tListaPlaylist *sentPlay1 = retornaListaPlayList(usuario);
+            tListaPlaylist *sentPlay2 = retornaListaPlayList(p->usu);
+
+            int similaridade = comparaListaPlay(sentPlay1,sentPlay2);
+            fprintf(arq,"%s;%s;%d\n",nomeUsu,nomeAmg,similaridade);
+
+            fclose(arq);
+            //chama funcao compara playList's;
+            //retorno um inteiro dessa função com o total de musicas iguais e jogo para o arquivo;
+            //antes de jogar para o arquivo de similadirdades, procurar nele se os usuarios em questão ja foram analisados;
+        }
+    }
+}
+
+int procuraNomes(char *nomeUsu, char *nomeAmg){
+    FILE *arq = fopen("data/Saida/similaridades.txt","r");
+    if(arq == NULL){
+        printf("Erro na aberturda do arquivo similaridades.txt\n");
+        exit(1);
+    }
+    char nomeAux1[50], nomeAux2[50];
+    int aux;
+    while(fscanf(arq,"%[^;];%[^;];%d ",nomeAux1,nomeAux2,&aux) == 3){
+        if(strcmp(nomeAux1,nomeUsu) == 0 && strcmp(nomeAux2,nomeAmg) == 0){
+            fclose(arq);
+            return 1;
+        }else if(strcmp(nomeAux1,nomeAmg) == 0 && strcmp(nomeAux2,nomeUsu) == 0){
+            fclose(arq);
+            return 1;
+        }
+    }
+    fclose(arq);
+    return 0;
+}
 
 //so de teste aqui
 void printaListaAmigos(tListaAmigos *sent){

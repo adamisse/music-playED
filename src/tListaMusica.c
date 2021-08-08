@@ -68,6 +68,21 @@ void refatorandoListaMusica(tListaMusica *sentMus, tListaPlaylist *sentPlay){
     }
 }
 
+int similaridadeListaMusica(tListaMusica *sent1, tListaMusica *sent2){
+    Celula *p,*t;
+    int similaridade = 0;
+
+    for(p=sent1->pri; p!=NULL ;p=p->prox){
+        char *nomeMus1 = retornaNomeMus(p->mus);
+        for(t=sent2->pri; t!=NULL ;t=t->prox){
+            char *nomeMus2 = retornaNomeMus(t->mus);
+
+            if(strcmp(nomeMus1,nomeMus2) == 0) similaridade++;
+        }
+    }
+    return similaridade;
+}
+
 void printaListaMusica2(tListaMusica *sent, FILE *arq){
     Celula *p;
     for(p=sent->pri; p!=NULL ; p = p->prox){

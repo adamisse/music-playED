@@ -13,6 +13,9 @@ void insereAmigo(tListaAmigos *sent,tUsuario *usuario);
 
 void liberaListaAmigos(tListaAmigos *sent);
 
+void comparaAmigos(tUsuario *usuario, tListaAmigos *sentAmg);
+
+int procuraNomes(char *nomeUsu, char *nomeAmg);
 
 //so de teste
 void printaListaAmigos(tListaAmigos *sent);
