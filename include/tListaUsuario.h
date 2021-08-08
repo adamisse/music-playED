@@ -18,6 +18,9 @@ void liberaListaUsuario(tListaUsu *sent);
 tUsuario *procuraUsuario(tListaUsu *sent, char *nome);
 
 void refatorandoListaUsuarios(tListaUsu *sent);
+
+void geraSaida(tListaUsu *sent);
+
 //so de teste
 void printaFilaUsuarios(tListaUsu *sent);
 

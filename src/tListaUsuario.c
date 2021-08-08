@@ -76,6 +76,31 @@ void insereUsuario(tListaUsu *sent,tUsuario *usuario){
     }
 }
 
+void geraSaida(tListaUsu *sent){
+   Celula *p;
+   char adress[150];
+   char adressAux[150] = "mkdir data/Saida/";
+   FILE *arq = fopen("data/Saida/played-refatorada.txt","w");
+   if(arq == NULL){
+       printf("Erro na criação do arquivo played-refatorada.txt\n");
+       exit(1);
+   }
+
+   for(p=sent->pri; p!=NULL ;p=p->prox){
+       tListaPlaylist *sentPlay = retornaListaPlayList(p->usuario);
+       int qtdPlay = qtdPlayList(sentPlay);
+       char *nomeUsu = retornaNomeUsu(p->usuario);
+       
+       strcpy(adress,adressAux);
+       strncat(adress,nomeUsu,150);
+       system(adress);
+
+       fprintf(arq,"%s;%d",nomeUsu,qtdPlay);
+       printaNomeListaPlay(sentPlay,arq,nomeUsu);
+   } 
+   fclose(arq);
+}
+
 void liberaListaUsuario(tListaUsu *sent){
     Celula *p = sent->pri;
     Celula *t;

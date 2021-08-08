@@ -82,6 +82,16 @@ tPlaylist *procuraPlaylist(tListaPlaylist *sent, char *nome){
     }
 }
 
+int qtdPlayList(tListaPlaylist *sent){
+    Celula *p;
+    int qtd = 0;
+    for(p=sent->pri; p!=NULL ;p=p->prox){
+        qtd++;
+    }
+
+    return qtd;
+}
+
 void liberaListaPlaylist(tListaPlaylist *sent){ 
     Celula *p = sent->pri;
     Celula *t;
@@ -96,6 +106,32 @@ void liberaListaPlaylist(tListaPlaylist *sent){
     free(sent);
 }
 
+void printaNomeListaPlay(tListaPlaylist *sent, FILE *arq, char *nomeUsu){
+    Celula *p;
+    char adress[100] = "data/Saida/";
+    char adressAux[100];
+    char barra[2] = "/";
+    char txt[5] = ".txt";
+    strncat(adress,nomeUsu,100);
+    strncat(adress,barra,100);
+
+    for(p=sent->pri; p!=NULL ;p=p->prox){
+        char *nomePlay = retornaNomePlay(p->playList);
+        fprintf(arq,";%s",nomePlay);
+
+        strcpy(adressAux,adress);
+        strncat(adressAux,nomePlay,100);
+        strncat(adressAux,txt,100);
+        FILE *arqPlay = fopen(adressAux,"w");
+        if(arqPlay == NULL){
+            printf("Erro na abertura do arquivo de playList's\n");
+            exit(1);
+        }
+        tListaMusica *sentMus = retornaListaMusica(p->playList);
+        printaListaMusica2(sentMus,arqPlay);
+    }
+    fprintf(arq,"\n");
+}
 
 void printaListaplayList(tListaPlaylist *sent){
     Celula *p;

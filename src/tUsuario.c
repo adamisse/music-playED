@@ -42,6 +42,10 @@ char *retornaNomeUsu(tUsuario *usuario){
     return usuario->nome;
 }
 
+tListaPlaylist *retornaListaPlayList(tUsuario *usuario){
+    return usuario->sentPla;
+}
+
 void refatorandoUsuario(tUsuario *usuario){
     tListaPlaylist *novaSent = iniciaSentinelaPlaylist();
     refatoraListaPlaylist(usuario->sentPla,novaSent);

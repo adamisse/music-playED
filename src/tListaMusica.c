@@ -68,6 +68,16 @@ void refatorandoListaMusica(tListaMusica *sentMus, tListaPlaylist *sentPlay){
     }
 }
 
+void printaListaMusica2(tListaMusica *sent, FILE *arq){
+    Celula *p;
+    for(p=sent->pri; p!=NULL ; p = p->prox){
+        char *nomeBand = retornaNomeBan(p->mus);
+        char *nomeMusi = retornaNomeMus(p->mus);
+
+        fprintf(arq,"%s - %s\n",nomeBand,nomeMusi);
+    }
+}
+
 void printaListaMusica(tListaMusica *sent){
     Celula *p;
     for(p=sent->pri; p!=NULL ; p = p->prox){

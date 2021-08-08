@@ -26,6 +26,7 @@ void preenchePlayList(tPlaylist *playList,char *nome){
 
     char nomeBanda[150], nomeMusica[150];
     while(fscanf(arq,"%[^-]- %[^\n] ",nomeBanda,nomeMusica) == 2){
+        nomeBanda[strlen(nomeBanda)-1] = '\0';
         tMusica *musica = inicializaMusica(nomeBanda,nomeMusica);
         insereMusica(playList->sentMus,musica);
     }

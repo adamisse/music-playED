@@ -17,9 +17,12 @@ tPlaylist *procuraPlaylist(tListaPlaylist *sent, char *nome);
 
 void liberaListaPlaylist(tListaPlaylist *sent);
 
-
 void refatoraListaPlaylist(tListaPlaylist *sent, tListaPlaylist *novaSent);
 
+int qtdPlayList(tListaPlaylist *sent);
+
+//mudar o nome dessa funcao aqui(coloca printaListaplayList)
+void printaNomeListaPlay(tListaPlaylist *sent, FILE *arq, char *nomeUsu);
 //teste
 void printaListaplayList(tListaPlaylist *sent);
 

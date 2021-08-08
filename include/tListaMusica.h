@@ -17,6 +17,8 @@ void liberaListaMusica(tListaMusica *sent);
 
 void refatorandoListaMusica(tListaMusica *sentMus, tListaPlaylist *sentPlay);
 
+void printaListaMusica2(tListaMusica *sent, FILE *arq);
+
 void printaListaMusica(tListaMusica *sent);
 
 #endif

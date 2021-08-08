@@ -16,6 +16,8 @@ void liberaUsuario(tUsuario *usuario);
 
 char *retornaNomeUsu(tUsuario *usuario);
 
+tListaPlaylist *retornaListaPlayList(tUsuario *usuario);
+
 void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2);
 
 void preencheListaPlayList(tUsuario *usuario,tPlaylist *playList);

@@ -20,7 +20,7 @@ void liberaMusica(tMusica *musica){
 }
 
 char *retornaNomeMus(tMusica *musica){
-    return musica->nomeBand;
+    return musica->nomeMus;
 }
 
 char *retornaNomeBan(tMusica *musica){
