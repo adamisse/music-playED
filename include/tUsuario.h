@@ -9,7 +9,6 @@ typedef struct Usuario tUsuario;
 #include "tPlaylist.h"
 #include "tListaAmizade.h"
 
-
 tUsuario *inicializaUsuario();
 
 void preencheNomeUsuario(tUsuario *usuario, char *nome);
@@ -24,11 +23,8 @@ tListaAmigos *retornaListaAmigos(tUsuario *usuario);
 
 void preencheListaAmigos(tUsuario *usuario1, tUsuario *usuario2);
 
-void preencheListaPlayList(tUsuario *usuario,tPlaylist *playList);
+void preencheListaPlayList(tUsuario *usuario, tPlaylist *playList);
 
 void refatorandoUsuario(tUsuario *usuario);
-
-//so testando
-void printaUsuario(tUsuario *usuario);
 
 #endif

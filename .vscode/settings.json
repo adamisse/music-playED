@@ -1,11 +1,12 @@
 {
-    "files.associations": {
-        "tusuario.h": "c",
-        "tlistaamizade.h": "c",
-        "tplaylist.h": "c",
-        "tlistaplaylist.h": "c",
-        "tlistausuario.h": "c",
-        "tmusica.h": "c"
-    },
-    "C_Cpp.dimInactiveRegions": false
+  "files.associations": {
+    "tusuario.h": "c",
+    "tlistaamizade.h": "c",
+    "tplaylist.h": "c",
+    "tlistaplaylist.h": "c",
+    "tlistausuario.h": "c",
+    "tmusica.h": "c",
+    "tlistamusica.h": "c"
+  },
+  "C_Cpp.dimInactiveRegions": false
 }

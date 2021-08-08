@@ -21,11 +21,8 @@ void refatoraListaPlaylist(tListaPlaylist *sent, tListaPlaylist *novaSent);
 
 int qtdPlayList(tListaPlaylist *sent);
 
-int comparaListaPlay(tListaPlaylist *sent1,tListaPlaylist *sent2);
+int comparaListaPlay(tListaPlaylist *sent1, tListaPlaylist *sent2);
 
-//mudar o nome dessa funcao aqui(coloca printaListaplayList)
-void printaNomeListaPlay(tListaPlaylist *sent, FILE *arq, char *nomeUsu);
-//teste
-void printaListaplayList(tListaPlaylist *sent);
+void printaListaplayList(tListaPlaylist *sent, FILE *arq, char *nomeUsu);
 
 #endif

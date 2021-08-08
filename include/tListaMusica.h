@@ -11,7 +11,7 @@ typedef struct ListaMusica tListaMusica;
 
 tListaMusica *iniciaSentinelaMusica();
 
-void insereMusica(tListaMusica *sent,tMusica *musica);
+void insereMusica(tListaMusica *sent, tMusica *musica);
 
 void liberaListaMusica(tListaMusica *sent);
 
@@ -19,8 +19,6 @@ void refatorandoListaMusica(tListaMusica *sentMus, tListaPlaylist *sentPlay);
 
 int similaridadeListaMusica(tListaMusica *sent1, tListaMusica *sent2);
 
-void printaListaMusica2(tListaMusica *sent, FILE *arq);
-
-void printaListaMusica(tListaMusica *sent);
+void printaListaMusica(tListaMusica *sent, FILE *arq);
 
 #endif

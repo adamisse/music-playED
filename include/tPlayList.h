@@ -11,7 +11,7 @@ typedef struct Playlist tPlaylist;
 
 tPlaylist *inicializaPlayList();
 
-void preenchePlayList(tPlaylist *playList,char *nome);
+void preenchePlayList(tPlaylist *playList, char *nome);
 
 void preencheNovaPlayList(tPlaylist *playList, tMusica *musica, char *nome);
 
@@ -20,9 +20,5 @@ void liberaPlayList(tPlaylist *playList);
 char *retornaNomePlay(tPlaylist *Playlist);
 
 tListaMusica *retornaListaMusica(tPlaylist *playList);
-
-//test
-void printaPlayList(tPlaylist *playList);
-
 
 #endif
