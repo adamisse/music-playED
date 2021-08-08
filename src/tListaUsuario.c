@@ -85,8 +85,7 @@ void geraSaida(tListaUsu *sent){
    system("mkdir data/Saida");
    
 
-   //O diretorio "Saida" ja existe ou nao *?????*
-   //considerando como ja existindo
+   //O diretorio "Saida" ja existe ou nao *?????
    char adressAux[150] = "mkdir data/Saida/";
    FILE *arq = fopen("data/Saida/played-refatorada.txt","w");
    FILE *arqSimi = fopen("data/Saida/similaridades.txt","w");

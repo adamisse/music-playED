@@ -6,15 +6,8 @@ int main(){
     criaFilaUsuarios(sentUsu);
     criaFilaPlayList(sentUsu);
 
-    //testando aqui
-    printaFilaUsuarios(sentUsu);
     refatorandoListaUsuarios(sentUsu);
-    //testnado
-    printaFilaUsuarios(sentUsu);
-
     geraSaida(sentUsu);
-    //calculaSimilaridade(sentUsu);
-
     
     liberaListaUsuario(sentUsu);
     return 0;
