@@ -24,7 +24,7 @@ tListaPlaylist *iniciaSentinelaPlaylist()
     return set;
 }
 
-void criaFilaPlayList(tListaUsu *sent)
+void criaListaPlayList(tListaUsu *sent)
 {
     FILE *arq = fopen("data/Entrada/playlists.txt", "r");
     if (arq == NULL)

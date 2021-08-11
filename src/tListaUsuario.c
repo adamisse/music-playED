@@ -25,7 +25,7 @@ tListaUsu *iniciaSentinelaUsuario()
     return set;
 }
 
-void criaFilaUsuarios(tListaUsu *sent)
+void criaListaUsuarios(tListaUsu *sent)
 {
     FILE *arq = fopen("data/Entrada/amizade.txt", "r");
     if (arq == NULL)

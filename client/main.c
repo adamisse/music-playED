@@ -4,8 +4,8 @@
 int main()
 {
     tListaUsu *sentUsu = iniciaSentinelaUsuario();
-    criaFilaUsuarios(sentUsu);
-    criaFilaPlayList(sentUsu);
+    criaListaUsuarios(sentUsu);
+    criaListaPlayList(sentUsu);
     refatorandoListaUsuarios(sentUsu);
     geraSaida(sentUsu);
     liberaListaUsuario(sentUsu);

@@ -9,7 +9,7 @@ typedef struct ListaPlaylist tListaPlaylist;
 
 tListaPlaylist *iniciaSentinelaPlaylist();
 
-void criaFilaPlayList(tListaUsu *sent);
+void criaListaPlayList(tListaUsu *sent);
 
 void inserePlaylist(tListaPlaylist *sent, tPlaylist *scan);
 
