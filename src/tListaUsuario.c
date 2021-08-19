@@ -33,7 +33,7 @@ void criaListaUsuarios(tListaUsu *sent)
         printf("Erro na abertura do arquivo amizade.txt\n");
         exit(1);
     }
-
+ 
     char nomeAux[150], nomeAux2[150], quebra;
     while (fscanf(arq, "%[^;^\n]%c", nomeAux, &quebra) == 2)
     {

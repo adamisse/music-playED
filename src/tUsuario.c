@@ -4,7 +4,7 @@
 #include "../include/tListaPlayList.h"
 
 struct Usuario
-{
+{ 
     char *nome;
     tListaAmigos *sentAmg;
     tListaPlaylist *sentPla;

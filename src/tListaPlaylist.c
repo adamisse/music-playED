@@ -29,7 +29,7 @@ void criaListaPlayList(tListaUsu *sent)
     FILE *arq = fopen("data/Entrada/playlists.txt", "r");
     if (arq == NULL)
     {
-        printf("Erro na abertura do arquivo playLista.txt!\n");
+        printf("Erro na abertura do arquivo playLists.txt!\n");
         exit(1);
     }
     char nome[50];
@@ -155,7 +155,7 @@ void printaListaplayList(tListaPlaylist *sent, FILE *arq, char *nomeUsu)
     fprintf(arq, "\n");
 }
 
-int comparaListaPlay(tListaPlaylist *sent1, tListaPlaylist *sent2)
+int similaridadeListaPlay(tListaPlaylist *sent1, tListaPlaylist *sent2)
 {
     Celula *p, *t;
     int similaridade = 0;

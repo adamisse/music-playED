@@ -2,7 +2,7 @@
 #define T_USUARIO
 
 typedef struct Usuario tUsuario;
-
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

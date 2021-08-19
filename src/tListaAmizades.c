@@ -69,7 +69,7 @@ void comparaAmigos(tUsuario *usuario, tListaAmigos *sentAmg)
             tListaPlaylist *sentPlay1 = retornaListaPlayList(usuario);
             tListaPlaylist *sentPlay2 = retornaListaPlayList(p->usu);
 
-            int similaridade = comparaListaPlay(sentPlay1, sentPlay2);
+            int similaridade = similaridadeListaPlay(sentPlay1, sentPlay2);
             fprintf(arq, "%s;%s;%d\n", nomeUsu, nomeAmg, similaridade);
 
             fclose(arq);
