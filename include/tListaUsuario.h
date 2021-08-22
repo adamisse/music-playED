@@ -4,13 +4,6 @@
 //Definição da estrutura responsável pela lógica da lista de usuários;
 typedef struct ListaUsu tListaUsu;
 
-/*
- * Efetua o cálculo do quão similares são duas listas de músicas;
- * inputs: Dois ponteiros para sentinelas de listas de músicas;
- * output: A quantidade de músicas similares;
- * pre-condicao: Ambas as sentinelas previamente inicializadas;
- * pos-condicao: A incrementação da similaridade entre as listas de músicas que foram comparadas;
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "tUsuario.h"

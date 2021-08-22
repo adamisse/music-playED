@@ -8,16 +8,6 @@ typedef struct ListaAmigos tListaAmigos;
 #include <stdlib.h>
 #include "tUsuario.h"
 
-            ////TIRAR ISSO DAQUI DEPOIS////////////////////
-//padrão de comentarios a ser estabelecido
-/*Inicializa uma matriz de nlinhas e ncolunas
- * inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
- * output: ponteiro para a matriz inicializada
- * pre-condicao: nlinhas e ncolunas diferentes de 0
- * pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas
- */
-
-
 /*
  *  Inicialização do struct tListaAmigos com *ult *pri;
  *  Outputs: Um ponteiro do tipo tListaAmigos que foi inicializado;
